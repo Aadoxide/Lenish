@@ -11,11 +11,11 @@ function prompt(promptText, callback) {
 }
 
 function translateToLenish(englishInput, replacements) {
-    let words = englishInput.split(" ");
+    let words = englishInput.split(' ');
     let translatedWords = [];
 
     for (let word of words) {
-        if (word.toLowerCase() === "lenish") {
+        if (word.toLowerCase().includes('lenish')) {
             translatedWords.push(word);
             continue;
         }
@@ -35,20 +35,14 @@ function translateToLenish(englishInput, replacements) {
         translatedWords.push(word);
     }
 
-    return translatedWords.join(" ");
+    return translatedWords.join(' ');
 }
 
 let replacements = {
-    'oi': 'ko', 'en': 'meh', 'ck': 'kl', 'se': 'ne', 'noi': 'soi', 'ay': 'ys', 'lan': 'kan', 'ot': 'or', 'h': '', 'me': 'meh', 'ru': 'lu',
-    'min': 'men', 'on': 'en', 'iz': 'oz', 'z': 'ko', 'r': 'er', 'ue': 'u', 'no': 'mo', 'ai': 'a', 'ke': 'ko', 'ou': 'oy', 'ta': 'at',
-    '\\:\\)': ':))', '\\:\\(': ':((', ':o': ':oo', 'an': 'ane', 'is': 'ez', 't': 'de', 'we': 'wr', 'ic': 'ik', 'ta': 'ti', 've': 'be',
-    's': 'ch', 'ng': 'gus', 'at': 'a', 'p': 'eroni', 'ank': 'nk', 'ios': 'seb', 'k': 'kk', 'id': 'ad', 'js': 'jos', 'que': 'qoo', 'aaa': 'eee',
-    'ia': 'iya', 'abc': 'qwe', 'nod': 'yee', 'rea': 'reena', 'cera': 'uety', 'og': 'awg', 'ey': 'oi', 'or': 'ro', 'we': 'ee', 'tr': 'rte',
-    'ost': 'asta', 'bmw': 'wmb', 'ly': 'ish', 'tion': 'shun', 'ing': 'in', 'y': 'eh', 'ful': 'som', 'ous': 'us', 'ess': 'ezz', 'ive': 'ib',
-    'ab': 'eb', 'od': 'ud', 'wad': 'wd', 'ta': 'to', 'ne': 'ns', 'loy': 'ly'
+    'oi': 'ko', 'en': 'meh', 'ck': 'kl', 'se': 'ne', 'noi': 'soi', 'ay': 'ys', 'lan': 'kan', 'ot': 'or', 'h': '', 'me': 'meh', 'ru': 'lu', 'min': 'men', 'on': 'en', 'iz': 'oz', 'z': 'ko', 'r': 'er', 'ue': 'u', 'no': 'mo', 'ai': 'a', 'ke': 'ko', 'ou': 'oy', 'ta': 'at', '\\:\\)': ':))', '\\:\\(': ':((', ':o': ':oo', 'an': 'ane', 'is': 'ez', 't': 'de', 'we': 'wr', 'ic': 'ik', 'ta': 'ti', 've': 'be', 's': 'ch', 'ng': 'gus', 'at': 'a', 'p': 'eroni', 'ank': 'nk', 'ios': 'seb', 'k': 'kk', 'id': 'ad', 'js': 'jos', 'que': 'qoo', 'aaa': 'eee', 'ia': 'iya', 'abc': 'qwe', 'nod': 'yee', 'rea': 'reena', 'cera': 'uety', 'og': 'awg', 'ey': 'oi', 'or': 'ro', 'we': 'ee', 'tr': 'rte', 'ost': 'asta', 'bmw': 'wmb', 'ly': 'ish', 'tion': 'shun', 'ing': 'in', 'y': 'eh', 'ful': 'som', 'ous': 'us', 'ess': 'ezz', 'ive': 'ib', 'ab': 'eb', 'od': 'ud', 'wad': 'wd', 'ta': 'to', 'ne': 'ns', 'loy': 'ly'
 };
 
-prompt("Enter your English phrase to convert it into Lenish: ", (englishInput) => {
+prompt('Enter your English phrase to convert it into Lenish: ', (englishInput) => {
     let lenishOutput = translateToLenish(englishInput, replacements);
-    console.log("\n" + lenishOutput);
+    console.log('\n' + lenishOutput);
 });
