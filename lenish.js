@@ -15,7 +15,7 @@ function translateToLenish(englishInput, replacements) {
     let translatedWords = [];
 
     for (let word of words) {
-        if (word.toLowerCase() === "lenish", "(lenish)") {
+        if (word.toLowerCase() === "lenish") {
             translatedWords.push(word);
             continue;
         }
